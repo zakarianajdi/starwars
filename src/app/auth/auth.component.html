@@ -1,0 +1,22 @@
+<div class="global-container">
+	<div class="card login-form">
+		<div class="card-body">
+			<h3 class="card-title text-center">STAR<b>WARS</b></h3>
+			<div class="card-text">
+				<form [formGroup]="authForm" (ngSubmit)="onSignIn()">
+					<div class="form-group">
+						<label for="email">Login</label>
+						<input type="email" class="form-control form-control-sm" id="email" formControlName="email">
+					</div>
+					<div class="form-group">
+						<label for="password">Password</label>
+						<input type="password" class="form-control form-control-sm" id="password"
+							formControlName="password">
+					</div>
+					<button type="submit" class="btn btn-sm btn-primary btn-block"
+						[disabled]="authForm.invalid">Connexion</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,39 @@
+<app-nav-bar></app-nav-bar>
+<div class="container">
+    <div class="card mt-4">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6 mb-2 text-left">
+                    <div class="form-group">
+                        <input class="form-control form-control-sm" placeholder="Search..." value="" (keyup)="onSearch($event)">
+                    </div>
+                </div>
+                <div class="col-md-6 mb-2 text-right">
+                    <button class="btn btn-sm btn-primary btn-wave" (click)="onCreate()">Add New Character</button>
+                    <button class="btn btn-sm btn-danger btn-wave ml-1" (click)="onDelete()">Delete All</button>
+                </div>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Birth Year</th>
+                        <th scope="col">Gender</th>
+                        <th scope="col">Options</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of list; index as i;">
+                        <td  (click)="showDetails(item.name)">{{ item.name }}</td>
+                        <td  (click)="showDetails(item.name)">{{ item.birth_year }}</td>
+                        <td  (click)="showDetails(item.name)"><span class="badge badge-warning">{{ item.gender | uppercase }}</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-danger btn-wave" (click)="OnDeleteById(i)">Delete</button>
+                            <button class="btn btn-sm btn-success btn-wave ml-1" (click)="onEdit(item.name)">Edit</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

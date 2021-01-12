@@ -1,0 +1,27 @@
+<app-nav-bar></app-nav-bar>
+<div class="container">
+    <div class="card mt-4">
+        <div class="card-body">
+            <div class="row text-right">
+                <div class="col-md-12">
+                    <button (click)="onBack()" class="btn btn-sm btn-primary">< Back</button>
+                </div>
+            </div>
+            <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="name"></label>
+                    <input type="text" class="form-control" placeholder="Name" id="name" formControlName="name">
+                </div>
+                <div class="form-group">
+                    <label for="birth"></label>
+                    <input type="text" class="form-control" placeholder="Birth year" id="birth" formControlName="birth_year">
+                </div>
+                <div class="form-group">
+                    <label for="gender"></label>
+                    <input type="text" class="form-control" placeholder="Gender" id="gender" formControlName="gender">
+                </div>
+                <button class="btn btn-sm btn-primary" type="submit" [disabled]="editForm.invalid">Sauvgarder</button>
+            </form>
+        </div>
+    </div>
+</div>
